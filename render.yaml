@@ -1,5 +1,6 @@
-build:
-  docker:
-    worker: Dockerfile
-run:
-  worker: npm start
+services:
+  - type: worker
+    name: my-worker
+    runtime: docker
+    dockerfilePath: Dockerfile
+    startCommand: npm start
